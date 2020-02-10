@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <AddTodo/>
+    <AddTodo v-on:add-todo="addTodo"/>
     <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
 </template>
@@ -24,17 +24,17 @@ export default {
       todos: [
         {
           id: 1,
-          title: 'Todo One',
+          title: 'Follow Alex Leybourne on Twitter',
           completed: false
         },
         {
           id: 2,
-          title: 'Todo Two',
-          completed: true
+          title: 'Code something new',
+          completed: false
         },
         {
           id: 3,
-          title: 'Todo Three',
+          title: 'Share your knowledge',
           completed: false
         }
       ]
@@ -43,6 +43,9 @@ export default {
   methods: {
     deleteTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id)
+    },
+    addTodo(newTodo) {
+      this.todos = [...this.todos, newTodo]
     }
   }
 }
