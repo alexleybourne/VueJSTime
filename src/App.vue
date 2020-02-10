@@ -66,13 +66,16 @@ export default {
   .btn {
     display: inline-block;
     border: none;
-    background: #555;
+    background: #56beff;
     color: #fff;
     padding: 7px 20px;
     cursor: pointer;
+    font-size: 20px;
+    transition: 0.2s;
   }
 
   .btn:hover {
-    background: #666;
+    background: #3fb5ff;
+    transform: scale(1.1);
   }
 </style>

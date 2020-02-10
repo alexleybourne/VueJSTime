@@ -41,6 +41,8 @@ export default {
     input[type="text"] {
         flex: 10;
         padding: 5px;
+        height: 50px;
+        font-size: 20px;
     }
 
     input[type="submit"] {
