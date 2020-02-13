@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="styles.css" >
 </head>
 <body>
-    <h1>Vue Basics</h1>
     <div id="app">
+        <h1>Vue Basics</h1>
         <h2>{{title}}</h2>
         <p>{{ greet('morning') }}</p>
         <a :href="url">Portfolio</a>
@@ -22,7 +22,15 @@
         <button v-on:dblclick='changeWage(5)'>Increase by 5</button>
         <button v-on:dblclick='changeWage(-5)'>Decrease by 5</button>
         <br>
-        <button>Log event info</button>
+        <button @click="logEvent">Log event info</button>
+        <br>
+        <div class='canvas' @mousemove="logCoords">{{coords.x}}, {{coords.y}}</div>
+        <br>
+        <p> Key up Event </p>
+        <input type='text' @keyup="updateName" :value='name'>
+        <br>
+        <p> v-model </p>
+        <input type='text' v-model='name'>
     </div>
 
     <script src="app.js"></script>
