@@ -2,17 +2,28 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
     text-align: center;
+    animation-duration: 0.2s;
 }
 
 body {
     display: flex;
     justify-content: center;
+    background-color: #007BFF;
 }
 
 h1 {
     margin: 20px;
+    color: #007BFF;
 }
 
+.main {
+    background-color: white;
+    border-radius: 20px;
+    width: 80vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 20px;
+}
 
 .one {
     color: cornflowerblue;

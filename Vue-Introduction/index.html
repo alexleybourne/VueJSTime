@@ -8,14 +8,17 @@
     <link rel="stylesheet" type="text/css" href="styles.css" >
 </head>
 <body>
-    <div id="app">
+    <div class="main" id="app">
         <h1>Vue Basics</h1>
         <h2>{{title}}</h2>
+        <a href="https://www.udemy.com/course/build-web-apps-with-vuejs-firebase/" target="_blank">Build Web Apps with Vue JS 2 & Firebase</a>
+        <br><br>
         <p>{{ greet('morning') }}</p>
         <a :href="url">Portfolio</a>
+        <br><br>
         <div :class="classes">Classes from instance</div>
         <input type='text' :value='name'>
-
+        <br><br>
         <p>I earn {{wage}} Dollars per hour</p>
         <button v-on:click='changeWage(1)'>Increase by 1</button>
         <button v-on:click='changeWage(-1)'>Decrease by 1</button>
@@ -25,12 +28,36 @@
         <button @click="logEvent">Log event info</button>
         <br>
         <div class='canvas' @mousemove="logCoords">{{coords.x}}, {{coords.y}}</div>
-        <br>
+        <br><br>
         <p> Key up Event </p>
         <input type='text' @keyup="updateName" :value='name'>
-        <br>
+        <br><br>
         <p> v-model </p>
         <input type='text' v-model='name'>
+        <br><br>
+        <p>Modifiers</p>
+        <button @click.alt="logMessage">alt/option - click me</button>
+        <button @click.shift="logMessage">shift - click me</button>
+        <br>
+        <a href="https://www.google.com" @click.prevent="logMessage" >Google</a>
+        <br><br>
+        <p>Conditional Output</p>
+        <p style="font-weight: bold;" v-if='showName'>Elon Musk</p> <p v-else-if='showAge'>48</p> 
+        <br>
+        <button @click='toggleName'> Show Name: {{showName}}</button>
+        <button @click='toggleAge'> Show Age: {{showAge}}</button>
+        <br><br>
+        <p>Looping with V-for</p>
+        <ul>
+            <li v-for='item in items'>{{item}}</li>
+        </ul>
+        <br><br>
+        <div v-for='car in cars'>
+            <p style="font-weight: bold;">{{car.name}}</p>
+            <p>$ {{car.price}}</p>
+            <p>You are {{car.status}}</p>
+            <br>
+        </div>
     </div>
 
     <script src="app.js"></script>
