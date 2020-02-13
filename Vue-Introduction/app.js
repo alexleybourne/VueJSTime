@@ -1,11 +1,18 @@
 new Vue({
     el: '#app',
     data: {
-        title: 'Becoming a Vue Pro'
+        title: 'Becoming a Vue Pro',
+        name: 'Alex L',
+        url: 'https://www.alexleybourne.com/',
+        classes: ['one', 'two'],
+        wage: 10
     },
     methods: {
-        greet(){
-            return `Hi, My name is Alex`
+        greet(time){
+            return `Hello there ${this.name}, good ${time}`
+        },
+        changeWage(amount){
+            this.wage += amount
         }
     }
 })

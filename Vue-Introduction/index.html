@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<link>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Basics</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" >
 </head>
 <body>
     <h1>Vue Basics</h1>
     <div id="app">
         <h2>{{title}}</h2>
-        <p>{{ greet() }}</p>
+        <p>{{ greet('morning') }}</p>
+        <a :href="url">Portfolio</a>
+        <div :class="classes">Classes from instance</div>
+        <input type='text' :value='name'>
+
+        <p>I earn {{wage}} Dollars per hour</p>
+        <button v-on:click='changeWage(1)'>Increase by 1</button>
+        <button v-on:click='changeWage(-1)'>Decrease by 1</button>
+        <button v-on:dblclick='changeWage(5)'>Increase by 5</button>
+        <button v-on:dblclick='changeWage(-5)'>Decrease by 5</button>
+        <br>
+        <button>Log event info</button>
     </div>
 
     <script src="app.js"></script>
