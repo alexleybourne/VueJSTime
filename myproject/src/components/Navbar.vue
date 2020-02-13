@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav class="main-nav">
         <h1>Menu</h1>
         <ul>
             <li><a href=''>Home</a></li>
@@ -22,7 +22,7 @@ export default {
 
 <style>
 
-nav {
+nav.main-nav {
     text-align: center; 
 }
 nav ul {
@@ -31,7 +31,7 @@ nav ul {
 nav li {
     display: inline-block;
     list-style-type: none;
-    margin: 0;
+    margin: 10px;
 }
 
 </style>
