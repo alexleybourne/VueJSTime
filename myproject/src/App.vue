@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{title}}</h1>
     <Navbar/>
-    <AllFriends :friends = "friends"/>
+    <AllFriends :friends = "friends" @delete="deleteFriend"/>
     <OnlineFriends :friends = "friends"/>
   </div>
 </template>
@@ -32,12 +32,20 @@ export default {
             ]
     }
   },
+  methods: {
+    deleteFriend(payload){
+      console.log(payload)
+      this.friends = this.friends.filter(friends => {
+        return friends.name !== payload.name 
+      })
+    }
+  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  h1 {
+
+<style >
+  * {
     font-family: Arial, Helvetica, sans-serif;
     color: #444;
     text-align: center;
