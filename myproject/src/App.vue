@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="hello">
+    <h1>{{title}}</h1>
+    <Navbar/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Navbar from './components/Navbar'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    HelloWorld
-  }
+    Navbar
+  },
+  data () {
+    return {
+      title: 'My first Vue App!'
+    }
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+  h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444;
+    text-align: center;
+  }
 </style>
