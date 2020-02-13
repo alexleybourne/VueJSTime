@@ -2,43 +2,29 @@
   <div class="hello">
     <h1>{{title}}</h1>
     <Navbar/>
-    <AllFriends :friends = "friends" @delete="deleteFriend"/>
-    <OnlineFriends :friends = "friends"/>
+    <Blogs/>
   </div>
 </template>
 
 <script>
 
 import Navbar from './components/Navbar'
-import AllFriends from './components/AllFriends'
-import OnlineFriends from './components/OnlineFriends'
+import Blogs from './components/Blogs'
 
 export default {
   name: 'app',
   components: {
     Navbar,
-    AllFriends,
-    OnlineFriends
+    Blogs
   },
   data () {
     return {
       title: 'My first Vue App!',
-      friends: [
-                {name: 'Jeff', online: true},
-                {name: 'Jim', online: false},
-                {name: 'Jemma', online: false},
-                {name: 'Jye', online: true},
-                {name: 'Jeb', online: true}
-            ]
+      
     }
   },
   methods: {
-    deleteFriend(payload){
-      console.log(payload)
-      this.friends = this.friends.filter(friends => {
-        return friends.name !== payload.name 
-      })
-    }
+    
   }
 }
 </script>
