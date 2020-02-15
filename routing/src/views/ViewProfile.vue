@@ -1,7 +1,7 @@
 <template>
     <div class="view-profile">
         <h2>Profile</h2>
-        <p>{{userId}}</p>
+        <p> Profile: {{userId}}</p>
     </div>
 </template>
 
