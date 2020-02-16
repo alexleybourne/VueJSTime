@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="199px" height="262px" viewBox="0 0 199 262" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Smoothie Book</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Smoothie-Book" transform="translate(0.000000, 5.932977)" stroke="#FFFFFF">
+            <rect id="Book" stroke-width="10" stroke-linejoin="bevel" x="14" y="0.0670228997" width="180" height="251" rx="8"></rect>
+            <g id="Cup" transform="translate(46.000000, 27.607726)" stroke-linejoin="round">
+                <path d="M20.0670549,199.459297 L67.5097042,199.459297 L68.5834234,192.059373 C58.9119801,184.024354 54.9531935,173.468757 56.7070635,160.392582 C58.4609335,147.316406 65.2393988,138.439169 77.0424592,133.760872 L90,44.459297 L0,44.459297 L20.0670549,199.459297 Z" id="Path" stroke-width="10"></path>
+                <polyline id="Path-2" stroke-width="7" stroke-linecap="round" points="31.1443979 186.781101 78.4742286 0 107.297218 0"></polyline>
+            </g>
+            <g id="Orange" transform="translate(97.000000, 125.101044)">
+                <circle id="Oval" stroke-width="10" cx="39" cy="67.9659791" r="34"></circle>
+                <path d="M39.0396901,34 C38.7442095,26.0208813 40.0985506,19.781638 43.1027134,15.28227 C46.1068761,10.7829021 54.0726383,5.68881207 67,0 C64.7133269,9.97520678 62.1389663,17.1060708 59.2769181,21.3925922 C56.41487,25.6791135 49.6691273,29.8815828 39.0396901,34 Z" id="Path-3" stroke-width="6" stroke-linejoin="round"></path>
+            </g>
+            <polygon id="Bookmark" stroke-width="10" fill="#FFFFFF" stroke-linejoin="round" points="32.2754785 0 32.2754785 53 46 39.0297739 60.6386539 53 60.6386539 0"></polygon>
+            <g id="Bindings" transform="translate(0.000000, 34.067023)" fill="#FFFFFF">
+                <rect id="Rectangle" x="0.5" y="0.5" width="20" height="10" rx="5"></rect>
+                <rect id="Rectangle" x="0.5" y="60.5" width="20" height="10" rx="5"></rect>
+                <rect id="Rectangle" x="0.5" y="120.5" width="20" height="10" rx="5"></rect>
+                <rect id="Rectangle" x="0.5" y="180.5" width="20" height="10" rx="5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
