@@ -1,24 +1,15 @@
-# vue_todolist
+﻿
+## Vue JS Learning
 
-## Project setup
-```
-npm install
-```
+![enter image description here](https://code.visualstudio.com/assets/docs/nodejs/vuejs/welcome-to-vue.png)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+![GitHub followers](https://img.shields.io/github/followers/alexleybourne?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/AlexLeybourne?style=social)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Here is a place to keep all of my Vue JS Tests and more as I learn Vue. 
 
-### Lints and fixes files
-```
-npm run lint
-```
+I reccomend these udemy courses:
+-
+- https://www.udemy.com/share/101XhyAkYdeF1aQno=/
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- https://www.udemy.com/share/101WzMAkYdeF1aQno=/
