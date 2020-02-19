@@ -4,6 +4,7 @@
   <div class="index container">
     <div v-for="smoothie in smoothies" :key="smoothie.id" class="card">
       <div class="card-content">
+        <i class="material-icons delete" @click="deleteSmoothie(smoothie.id)" >delete</i>
         <h2 class="blue-text">{{smoothie.title}}</h2>
         <ul class="ingredients">
           <li v-for="(ingredient, index) in smoothie.ingredients" :key="index">
@@ -17,15 +18,33 @@
 
 <script>
 
+import db from '@/firebase/init'
+
 export default {
   name: 'Index',
   data() {
     return {
-      smoothies: [
-        {title: 'Hangover Helper', slug: 'hangover-helper', ingredients: ['bananas', 'coffee', 'redbull', 'kiwifruit', 'honey', 'secret ingredient X'], id: 1},
-        {title: 'Super Sipper', slug: 'super-sipper', ingredients: ['mango', 'banana', 'milk', 'honey', 'yogurt', 'strawberries'], id: 2}
-      ]
+      smoothies: []
     }
+  },
+  methods: {
+    deleteSmoothie(id){
+      console.log('Delete Smoothie ' + id)
+      this.smoothies = this.smoothies.filter(smoothie => {
+        return smoothie.id != id
+      })
+    }
+  },
+  created(){
+    //fetch data from firestore
+    db.collection('smoothies').get()
+    .then(snapshot => {
+      snapshot.forEach(doc => {
+        let smoothie = doc.data()
+        smoothie.id = doc.id
+        this.smoothies.push(smoothie)
+      })
+    })
   }
 }
 </script>
@@ -51,6 +70,15 @@ export default {
 
 .index .ingredients li {
   display: inline-block;
+}
+
+.index .delete {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 1.4em;
 }
 
 </style>
