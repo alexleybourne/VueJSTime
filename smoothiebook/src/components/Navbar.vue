@@ -2,12 +2,12 @@
     <div class="navbar">
         <nav class="nav-extended blue darken-2">
             <div class="nav-content">
-                <router-link to="">
+                <router-link :to="{ name: 'Index' }">
                     <img class="nav-logo" src="../assets/SmoothieBookLogo.svg" alt="Smoothie Book Logo">
                     <span class="nav-title">SmoothieBook</span>
                 </router-link>
                 <a href="" class="btn-floating btn-large halfway-fab light-blue">
-                    <router-link to="">
+                    <router-link :to="{ name: 'AddSmoothie' }">
                         <i class="material-icons">add</i>
                     </router-link>
                 </a>
