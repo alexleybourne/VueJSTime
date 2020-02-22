@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import db from '../firebase/init'
 export default {
     name:"AddSmoothie",
     data() {
@@ -30,12 +31,36 @@ export default {
             title: null,
             another: null,
             ingredients: [],
-            feedback: null
+            feedback: null,
+            slug: null
         }
     },
     methods: {
         AddSmoothie() {
             console.log(this.title, this.ingredients)
+            if(this.title) {
+                // Creating Slug
+                let newSlug = this.title.toLowerCase()
+                newSlug = newSlug.replace(/[$*_+~.()'"!\:;@&^%#+]/g, '')
+                newSlug = newSlug.replace(/ /g, '-')
+                this.slug = newSlug
+
+                let data = {
+                    title: this.title,
+                    ingredients: this.ingredients,
+                    slug: this.slug
+                }
+
+                console.log(data)
+
+                db.collection('smoothies').add(data).then(() => {
+                    this.$router.push({ name: 'Index'})
+                }).catch(err => console.log(err))
+                
+                this.feedback = null
+            } else {
+                this.feedback = "You must enter a smoothie title"
+            }
         },
         AddIngredient(){
             if(this.another){
