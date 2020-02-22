@@ -10,9 +10,10 @@
                 <label for="add-ingredient">Add an Ingredient:</label>
                 <input class="blue-line" type="text" name="add-ingredient" @keydown.tab.prevent="AddIngredient" v-model="another">
             </div>
-            <div v-for="(ingredient, index) in ingredients" :key="index">
+            <div v-for="(ingredient, index) in ingredients" :key="index" class="field">
                 <label for="Ingredient">Ingredient:</label>
                 <input type="text" name="Ingredient" v-model="ingredients[index]">
+                <i class="material-icons delete" @click="DeleteIngredient(ingredient)">delete</i>
             </div>
             <div class="field center-align">
                 <p class="red-text" v-if="feedback">{{ feedback }}</p>
@@ -70,7 +71,13 @@ export default {
             } else {
                 this.feedback = "You must enter a value to add an ingredient"
             }
+        },
+        DeleteIngredient(ingredientd){
+            this.ingredients = this.ingredients.filter(ingredient => {
+                return ingredient != ingredientd
+            })
         }
+        
     }
 }
 </script>
@@ -96,6 +103,7 @@ export default {
 
     .add-smoothie .field {
         margin: 20px auto;
+        position: relative;
     }
 
     .add-smoothie h2 {
@@ -107,6 +115,15 @@ export default {
     .red-text {
         color: rgb(255, 86, 86);
         font-weight: bold;
+    }
+
+    .add-smoothie .delete {
+        cursor: pointer;
+        right: 6px;
+        bottom: 16px;
+        font-size: 1.4em;
+        position: absolute;
+        color: rgb(181, 181, 181);
     }
     
 </style>
