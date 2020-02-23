@@ -1,4 +1,6 @@
 <template>
+<div>
+<Loader v-if="!loaded"/>
     <div class="add-smoothie container">
         <h2 class="center-align blue-text">Add New Smoothie Recipe</h2>
         <form @submit.prevent="AddSmoothie">
@@ -22,10 +24,13 @@
             </div>
         </form>
     </div>
+    </div>
 </template>
 
 <script>
 import db from '../firebase/init'
+import Loader from '../components/Loader'
+
 export default {
     name:"AddSmoothie",
     data() {
@@ -34,8 +39,15 @@ export default {
             another: null,
             ingredients: [],
             feedback: null,
-            slug: null
+            slug: null,
+            loaded: null
         }
+    },
+    components: {
+        Loader
+    },
+    mounted(){
+        this.loaded = true
     },
     methods: {
         AddSmoothie() {
@@ -78,7 +90,6 @@ export default {
                 return ingredient != ingredientd
             })
         }
-        
     }
 }
 </script>

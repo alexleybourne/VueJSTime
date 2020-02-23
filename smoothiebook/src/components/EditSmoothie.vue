@@ -1,4 +1,6 @@
 <template>
+<div>
+<Loader v-if="!loaded"/>
     <div v-if="smoothie" class="edit-smoothie container">
         <h2>Edit {{ smoothie.title }} Smoothie</h2>
         <form @submit.prevent="EditSmoothie">
@@ -22,18 +24,25 @@
             </div>
         </form>
     </div>
+</div>
 </template>
 
 <script>
 import db from '../firebase/init'
+import Loader from '../components/Loader'
+
 export default {
     name:"EditSmoothie",
     data() {
         return {
             smoothie: null,
             another: null,
-            feedback: null
+            feedback: null,
+            loaded: null
         }
+    },
+    components: {
+        Loader
     },
     created(){
         let ref = db.collection('smoothies').where('slug', '==', this.$route.params.smoothie_slug)
@@ -44,6 +53,9 @@ export default {
             })
         })
     }, 
+    mounted(){
+        this.loaded = true
+    },
     methods: {
         EditSmoothie() {
             console.log(this.title, this.ingredients)

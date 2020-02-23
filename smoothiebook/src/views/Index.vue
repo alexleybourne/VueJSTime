@@ -1,6 +1,8 @@
 
 
 <template>
+<div>
+  <Loader v-if="!loaded"/>
   <div class="index container">
     <div v-for="smoothie in smoothies" :key="smoothie.id" class="card">
       <div class="card-content">
@@ -19,28 +21,27 @@
       </span>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
 
 import db from '@/firebase/init'
+import Loader from '../components/Loader'
 
 export default {
   name: 'Index',
   data() {
     return {
-      smoothies: []
+      smoothies: [],
+      loaded: null
     }
   },
-  methods: {
-    deleteSmoothie(id){
-      db.collection('smoothies').doc(id).delete()
-      .then(() => {
-        this.smoothies = this.smoothies.filter(smoothie => {
-          return smoothie.id != id
-        })
-      })
-    }
+  components: {
+    Loader
+  },
+  mounted(){
+    setTimeout(() => {  this.loaded = true }, 1000)
   },
   created(){
     //fetch data from firestore
@@ -52,7 +53,17 @@ export default {
         this.smoothies.push(smoothie)
       })
     })
-  }
+  },
+  methods: {
+    deleteSmoothie(id){
+      db.collection('smoothies').doc(id).delete()
+      .then(() => {
+        this.smoothies = this.smoothies.filter(smoothie => {
+          return smoothie.id != id
+        })
+      })
+    }
+  },
 }
 </script>
 
