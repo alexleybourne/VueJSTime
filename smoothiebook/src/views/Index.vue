@@ -40,14 +40,12 @@ export default {
   components: {
     Loader
   },
-  mounted(){
-    setTimeout(() => {  this.loaded = true }, 1000)
-  },
   created(){
     //fetch data from firestore
     db.collection('smoothies').get()
     .then(snapshot => {
       snapshot.forEach(doc => {
+        this.loaded = true
         let smoothie = doc.data()
         smoothie.id = doc.id
         this.smoothies.push(smoothie)

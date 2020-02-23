@@ -47,15 +47,13 @@ export default {
     created(){
         let ref = db.collection('smoothies').where('slug', '==', this.$route.params.smoothie_slug)
         ref.get().then(snapshot => {
+            this.loaded = true
             snapshot.forEach(doc => {
                 this.smoothie = doc.data()
                 this.smoothie.id = doc.id
             })
         })
     }, 
-    mounted(){
-        this.loaded = true
-    },
     methods: {
         EditSmoothie() {
             console.log(this.title, this.ingredients)
