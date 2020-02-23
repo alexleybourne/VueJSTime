@@ -45,8 +45,31 @@ export default {
         })
     }, 
     methods: {
-        EditSmoothie(){
+        EditSmoothie() {
+            console.log(this.title, this.ingredients)
+            if(this.smoothie.title) {
+                // Creating Slug
+                let newSlug = this.smoothie.title.toLowerCase()
+                newSlug = newSlug.replace(/[$*_+~.()'"!\:;@&^%#+]/g, '')
+                newSlug = newSlug.replace(/ /g, '-')
+                this.smoothie.slug = newSlug
 
+                let data = {
+                    title: this.smoothie.title,
+                    ingredients: this.smoothie.ingredients,
+                    slug: this.smoothie.slug
+                }
+
+                console.log(data)
+
+                db.collection('smoothies').doc(this.smoothie.id).update(data).then(() => {
+                    this.$router.push({ name: 'Index'})
+                }).catch(err => console.log(err))
+                
+                this.feedback = null
+            } else {
+                this.feedback = "You must enter a smoothie title"
+            }
         },
         AddIngredient(){
             if(this.another){

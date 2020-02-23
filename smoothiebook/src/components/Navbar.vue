@@ -8,7 +8,7 @@
                 </router-link>
                 <a href="" class="btn-floating btn-large halfway-fab light-blue">
                     <router-link :to="{ name: 'AddSmoothie' }">
-                        <i class="material-icons">add</i>
+                        <i class="material-icons add-btn">add</i>
                     </router-link>
                 </a>
             </div>
@@ -39,4 +39,13 @@ export default {
         position: relative;
         top: 13px;
     }
+
+    .add-btn {
+        transition-duration: 0.4s;
+    }
+
+    .add-btn:hover {
+        transform: scale(1.6);
+    }
+
 </style>

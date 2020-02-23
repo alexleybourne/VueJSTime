@@ -79,24 +79,38 @@ export default {
   display: inline-block;
 }
 
-.index .delete {
+.delete {
   position: absolute;
   top: 4px;
   right: 4px;
   cursor: pointer;
   color: #aaa;
   font-size: 1.4em;
+  transition-duration: 0.4s;
+}
+
+.delete:hover {
+  color: rgb(255, 93, 93);
+  font-size: 1.6em;
 }
 
 .btn-position {
   bottom: 8px !important;
   right: 8px !important;
+  transition-duration: 0.4s;
 }
 
 .edit-icon {
   position: relative;
   font-size: 1em;
   left: 8px;
+  transition-duration: 0.4s;
+}
+
+.edit-icon:hover {
+  font-size: 2.2em;
+  transform: rotate(-50deg);
+  left: 4px;
 }
 
 </style>
