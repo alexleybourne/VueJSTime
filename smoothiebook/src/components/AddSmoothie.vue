@@ -9,6 +9,7 @@
             <div class="field add-ingredient">
                 <label for="add-ingredient">Add an Ingredient:</label>
                 <input class="blue-line" type="text" name="add-ingredient" @keydown.tab.prevent="AddIngredient" v-model="another">
+                <button class="btn light-blue btn-small btn-add" @click.prevent="AddIngredient" >Add</button>
             </div>
             <div v-for="(ingredient, index) in ingredients" :key="index" class="field">
                 <label for="Ingredient">Ingredient:</label>
@@ -124,6 +125,11 @@ export default {
         font-size: 1.4em;
         position: absolute;
         color: rgb(181, 181, 181);
+    }
+
+    .btn-add {
+        position: absolute;
+        right: 4px;
     }
     
 </style>
