@@ -30,9 +30,10 @@ export default {
                 }).catch( err => {
                     console.log(err)
                 })
+                this.newMessage = null
+                this.feedback = null
             } else {
                 this.feedback = "you must enter a message to send one."
-                console.log(process.env.VUE_APP_FIREBASEKEYTWO)
             }
         }
     }
