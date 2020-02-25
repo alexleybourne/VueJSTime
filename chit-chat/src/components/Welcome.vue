@@ -55,12 +55,12 @@ export default {
 }
 
 /* label focus color */
-.welcome input[type=text]:focus + label {
+input[type=text]:focus + label {
     color: rgb(9, 164, 211) !important;
 }
 
 /* label underline focus color */
-.welcome input[type=text]:focus {
+input[type=text]:focus {
     border-bottom: 1px solid rgb(9, 163, 210) !important;
     box-shadow: 0 1px 0 0 rgb(5, 158, 205)!important;
 }
