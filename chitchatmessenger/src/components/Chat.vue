@@ -3,7 +3,7 @@
         <h2 class="center blue-text">Chit Chat</h2>
         <div class="card">
             <div class="card-content">
-                <ul class="messages">
+                <ul class="messages" v-chat-scroll>
                     <li v-for="message in messages" :key="message.id">
                         <span class="blue-text">{{ message.name }}: </span>
                         <span class="grey-text text-darken-3">{{ message.content }}</span>
@@ -36,7 +36,7 @@ export default {
     },
     created(){
         let ref = db.collection('messages').orderBy('timestamp')
-
+             
         ref.onSnapshot(snapshot => {
             snapshot.docChanges().forEach(change => {
                 if(change.type == 'added'){
@@ -68,4 +68,22 @@ export default {
         display: block;
         font-size: 0.8em;
     }
+
+    .messages {
+        max-height: 400px;
+        overflow: auto;
+    }
+
+    .messages::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .messages::-webkit-scrollbar-track {
+        background: #ddd;
+    }
+
+    .messages::-webkit-scrollbar-thumb {
+        background: #aaa;
+    }
+
 </style>
