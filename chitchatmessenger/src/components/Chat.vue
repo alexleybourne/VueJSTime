@@ -1,14 +1,21 @@
 <template>
     <div class="chat container">
-        <h2 class="center blue-text">Chit Chat</h2>
+        <div class="logo-div">
+            <img src="../assets/ChitChatLogo.svg" alt="chit chat logo" height="100px" >
+            <h2 class="center blue-text">Chit Chat</h2>
+        </div>
         <div class="card">
             <div class="card-content">
                 <ul class="messages" v-chat-scroll>
-                    <li v-for="message in messages" :key="message.id">
+
+                    <li v-for="message in messages" :key="message.id" :class="{ 'your-message' : name == message.name}">
+
                         <span class="blue-text">{{ message.name }}: </span>
                         <span class="grey-text text-darken-3">{{ message.content }}</span>
                         <span class="grey-text time">{{ message.timestamp }}</span>
+
                     </li>
+                    
                 </ul>
                 <div class="card-action">
                     <NewMessage :name="name" />
@@ -84,6 +91,17 @@ export default {
 
     .messages::-webkit-scrollbar-thumb {
         background: #aaa;
+    }
+
+    .logo-div {
+        display: flex;
+        justify-content: center;
+        margin-top: 10vh;
+    }
+
+    .your-message {
+        text-align: right;
+        margin-right: 10px;
     }
 
 </style>
