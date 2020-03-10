@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Gmap from '@/components/home/Gmap'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'App',
+    name: 'Gmap',
+    component: Gmap
   },
 ]
 
