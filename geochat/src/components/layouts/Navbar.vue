@@ -1,6 +1,6 @@
 <template>
     <div class="navbar">
-        <nav class="blue darken-1">
+        <nav class="bg-blue">
             <div class="container">
                 <a href="" class="brand-logo left">Geo Chat</a>
                 <ul class="right">
@@ -24,5 +24,15 @@ export default {
 </script>
 
 <style>
-    
+    .bg-blue {
+        background-color: #007BFF;
+    }
+
+    .txt-blue {
+        color: #007BFF;
+    }
+
+    .bg-white {
+        background-color: #ffff;
+    }
 </style>
