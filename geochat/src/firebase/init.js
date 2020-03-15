@@ -1,4 +1,5 @@
 import firebase from 'firebase'
+import firestore from 'firebase/firestore'
 
 const key = process.env.VUE_APP_FIREBASEKEYTHREE
 const domain = process.env.VUE_APP_AUTHDOMAINTHREE

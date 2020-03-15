@@ -14,6 +14,7 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" v-model="password">
             </div>
+            <p v-if="feedback" class="red-text center">{{ feedback }}</p>
             <div class="field center">
                 <button class="btn blue">Signup</button>
             </div>
@@ -22,6 +23,8 @@
 </template>
 
 <script>
+import db from '@/firebase/init'
+
 export default {
     name: 'Signup',
     data(){
@@ -29,11 +32,33 @@ export default {
             username: null,
             email: null,
             password: null,
+            feedback: null,
+            slug: null,
         }
     },
     methods: {
         signup() {
-            
+            if (this.username) {
+                // Creating Slug
+                let newSlug = this.username.toLowerCase()
+                newSlug = newSlug.replace(/[$*_+~.()'"!\:;@&^%#+]/g, '')
+                newSlug = newSlug.replace(/ /g, '-')
+                this.slug = newSlug
+                
+                let ref = db.collection('user').doc(this.slug)
+                ref.get().then(doc => {
+                    if(doc.exists){
+                        this.feedback = "That Username is taken."
+                    } else {
+                        this.feedback = "That Username is available."
+                    }
+                })
+
+                console.log(this.slug)
+
+            } else {
+                this.feedback = "You must enter a Username"
+            }
         }
     }
 }
